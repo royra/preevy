@@ -223,7 +223,7 @@ export const sshServer = (
             (reason: Error) => {
               log.error('streamlocal-forward@openssh.com: rejecting %j, reason: %j', request, inspect(reason))
               reject?.()
-            }
+            },
           )
 
         })
@@ -250,12 +250,6 @@ export const sshServer = (
                 }
               },
             })
-            // channel.stdout.on('close', () => {
-            //   log.debug('hello close, tunnels: %d', tunnels.size)
-            //   if (tunnels.size === 0) {
-            //     channel.close()
-            //   }
-            // })
           })
         })
     }
